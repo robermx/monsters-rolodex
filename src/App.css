@@ -9,3 +9,11 @@ body {
   background: radial-gradient(circle, rgb(71, 246, 194) 0%, rgb(20, 48, 139) 100%);
   text-align: center;
 }
+
+.app-title {
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  font-size: 6rem;
+  color: #120458;
+  font-family: 'Bigelow Rules', cursive;
+}
