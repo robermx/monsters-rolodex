@@ -5,6 +5,7 @@ import './App.css';
 
 const App = () => {
   const [searchField, setSearchField] = useState('');
+  const [title, setTitle] = useState('');
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilteredMonsters] = useState(monsters);
 
@@ -27,13 +28,23 @@ const App = () => {
     setSearchField(searchFieldValue);
   };
 
+  const onTitleChamge= (e) => {
+    const searchFieldValue = e.target.value.toLowerCase();
+    setTitle(searchFieldValue);
+  };
+
   return (
     <div className="App">
-      <h1 className="app-title">Monsters Rolodex</h1>
+      <h1 className="app-title">{title}</h1>
       <SearchBox
         className="monsters-saarch-box"
         placeholder="Search monsters"
         onChangeHandle={onSearchField}
+      />
+      <SearchBox
+        className="title-saarch-box"
+        placeholder="set title"
+        onChangeHandle={onTitleChamge}
       />
       <CardList monsters={filteredMonsters} />
     </div>
